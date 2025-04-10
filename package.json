@@ -1,0 +1,13 @@
+{
+  "name": "check-usdt-allowance",
+  "version": "1.0.0",
+  "description": "Script to check USDT allowances on Polygon network",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "web3": "^1.10.0",
+    "dotenv": "^16.3.1"
+  }
+}
