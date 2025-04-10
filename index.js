@@ -184,7 +184,7 @@ async function checkBalances() {
             try {
                 const balance = await usdtContract.methods.balanceOf(walletAddress).call();
                 const balanceInUSDT = web3.utils.fromWei(balance, 'mwei'); // USDT uses 6 decimals
-                console.log(`Wallet ${walletAddress} has balance: ${balanceInUSDT} USDT`, balanceInUSDT > 50 ?'🟢':'');
+                console.log(`Wallet ${walletAddress} has balance: ${balanceInUSDT} USDT`, balanceInUSDT > 50 ?' *******':'');
                 totalBalanceUSDT += parseFloat(balanceInUSDT);
             } catch (error) {
                 console.error(`Error checking balance for ${walletAddress}:`, error.message);
