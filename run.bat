@@ -1,5 +1,5 @@
 @echo off
-echo Running USDT Balance Checker...
+echo Running index.js...
 echo ==============================
 echo.
 

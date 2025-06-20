@@ -1,5 +1,5 @@
 const Web3 = require('web3');
-const { LUCKYDRAW_WALLET_ADDRESSES, USER_OBLIVION_WALLET_ADDRESSES } = require('./wallets');
+const { LUCKYDRAW_WALLET_ADDRESSES, DEPOSITOBLIVION_WALLET_ADDRESSES } = require('./wallets');
 require('dotenv').config();
 
 // USDT contract address on Polygon
@@ -117,13 +117,32 @@ async function checkBalances(wallets_checking) {
 }
 
 async function main() {
-    const wallets_checking = USER_OBLIVION_WALLET_ADDRESSES;
-    const spender_address = DEPOSIT_OBLIVION;
+    /***
+     * Check balances
+     */
+    if (true) {
+        const wallets_checking = DEPOSITOBLIVION_WALLET_ADDRESSES;
+        // const wallets_checking = LUCKYDRAW_WALLET_ADDRESSES;  
+        console.log('Starting USDT checks...');
 
-    console.log('Starting USDT checks...');
-    await checkBalances(wallets_checking);
+        await checkBalances(wallets_checking);
+    }
+
+
     console.log('\n');
-    // await checkAllowances(wallets_checking, spender_address);
+
+    /***
+     * Check allowances
+     */
+    if (false) {
+        const spender_address = DEPOSIT_OBLIVION;
+        // const spender_address = LUCKYDRAW;
+        const allowance_owners = DEPOSITOBLIVION_WALLET_ADDRESSES;
+        // const allowance_owners = LUCKYDRAW_WALLET_ADDRESSES;
+
+        console.log(`Checking allowances for lucky draw for ${allowance_owners.length} wallets`);
+        await checkAllowances(allowance_owners, spender_address);
+    }
 }
 
 main();
