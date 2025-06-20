@@ -123,7 +123,7 @@ async function main() {
     if (true) {
         const wallets_checking = DEPOSITOBLIVION_WALLET_ADDRESSES;
         // const wallets_checking = LUCKYDRAW_WALLET_ADDRESSES;  
-        console.log('Starting USDT checks...');
+        console.log(`Starting USDT checks for ${wallets_checking.length} wallets for DEPOSITOBLIVION`);
 
         await checkBalances(wallets_checking);
     }
